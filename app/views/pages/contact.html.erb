@@ -1,2 +1,43 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<div class="contact-container">
+  <header class="contact-header">
+    <h1>Contact Me</h1>
+    <p>I'm always open to discussing new projects or opportunities. Reach out to me!</p>
+  </header>
+  
+  <section class="contact-info">
+    <h2>Contact Details</h2>
+    <p>Email: mavera@memphis.edu</p>
+    <p>Phone: (901)-456-7890</p>
+  </section>
+
+  <section class="social-media">
+    <h2>Connect with Me</h2>
+    <ul>
+      <li><a href="https://github.com/OuroborosPi" target="_blank">GitHub</a></li>
+    </ul>
+  </section>
+
+  <section class="contact-form">
+    <h2>Send a Message</h2>
+    <%= form_with(url: contact_path, local: true) do |form| %>
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :email %>
+        <%= form.email_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :message %>
+        <%= form.text_area :message, class: 'form-control' %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit 'Send Message', class: 'btn' %>
+      </div>
+    <% end %>
+  </section>
+</div>
